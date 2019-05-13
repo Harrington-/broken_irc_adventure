@@ -21,6 +21,9 @@ user_table = Table(
     Column('deaths', String),
     Column('active_adventure', Boolean),
     Column('active_quest', Boolean),
+    Column('active_quest_id', Integer),
+    Column("region_id", Integer),
+    Column("location_id", Integer),
     PrimaryKeyConstraint('nick')
 )
 
@@ -28,7 +31,7 @@ quest_table = Table(
     "broken_adventure_quests",
     database.metadata,
     Column('name', String),
-    Column('region', Integer),
+    Column('region_id', Integer),
     Column('desc', String),
     Column('difficulty', Integer),
     Column('id', Integer),
@@ -39,7 +42,7 @@ region_table = Table(
     "broken_adventure_regions",
     database.metadata,
     Column("name", String),
-    Column("location", Integer),
+    Column("region_location_id", Integer),
     Column("id", Integer),
     PrimaryKeyConstraint('id')
 )
